@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const hotelSchema = new Schema({
+const pgSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -34,15 +34,6 @@ const hotelSchema = new Schema({
     type: String,
     required: true,
   },
-
-  //   body: String,
-  //   comments: [{ body: String, date: Date }],
-  //   date: { type: Date, default: Date.now },
-  //   hidden: Boolean,
-  //   meta: {
-  //     votes: Number,
-  //     favs: Number,
-  //   },
 });
 
-export default mongoose.model("Pg", hotelSchema);
+export default mongoose.model("Pg", pgSchema);

@@ -6,20 +6,21 @@ import {
   updatePg,
   pgList,
 } from "../controllers/pg.js";
+import { verifyAdmin } from "../utils/verifyUser.js";
 
 const router = express.Router();
 
 //create a pg
 
-router.post("/create", createPg);
+router.post("/create", verifyAdmin, createPg);
 
 //update a pg
 
-router.put("/:id", updatePg);
+router.put("/:id", verifyAdmin, updatePg);
 
 // delete a pg
 
-router.delete("/:id", deletePg);
+router.delete("/:id", verifyAdmin, deletePg);
 
 router.get("/:id", findPg);
 
